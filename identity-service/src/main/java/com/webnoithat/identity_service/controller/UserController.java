@@ -15,17 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.webnoithat.identity_service.dtos.ApiResponse;
 import com.webnoithat.identity_service.dtos.UserCreationRequest;
+import com.webnoithat.identity_service.dtos.UserResponse;
 import com.webnoithat.identity_service.dtos.UserUpdateRequest;
 import com.webnoithat.identity_service.entities.User;
 import com.webnoithat.identity_service.service.UserService;
 
 import jakarta.validation.Valid;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UserController {
-	@Autowired
-	private UserService userService;
+	
+	UserService userService;
 	
 	@PostMapping
 	ApiResponse<User> createUser(@RequestBody @Valid  UserCreationRequest request ) {
@@ -40,12 +46,12 @@ public class UserController {
 	}
 	
 	@GetMapping("/{userId}")
-	User getUserById(@PathVariable("userId") UUID userId) {
+	UserResponse getUserById(@PathVariable("userId") UUID userId) {
 		return userService.getUserById(userId);
 	}
 	
 	@PutMapping("/{userId}")
-	User updateUser(@PathVariable UUID userId,  @RequestBody UserUpdateRequest request ) {
+	UserResponse updateUser(@PathVariable UUID userId,  @RequestBody UserUpdateRequest request ) {
 		return userService.updateUser(userId, request);
 	}
 	
