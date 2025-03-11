@@ -1,6 +1,7 @@
 package com.webnoithat.identity_service.dtos;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -14,12 +15,11 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserUpdateRequest {
-	 String password;
-	 String firstName;
-	 String lastName;
-	 LocalDate dob;
-
-	
-	
+public class UserResponse {
+	UUID id;
+	String username;
+	String password;
+	String firstName;
+	String lastName;
+	LocalDate dob;
 }
