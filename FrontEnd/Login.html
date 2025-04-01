@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+            />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    
+        <header id="header">
+            <div id="header-container">
+                <div id="header-menu" class="header-menu">
+                    <div class="dropdown" id="home">
+                        <button onclick="goToHome()" class="btn btn-secondary dropdown-toggle"
+                            type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </button>
+                        <ul class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="/index.html#decorate-themes">Decorate Themes</a></li>
+                            <li><a class="dropdown-item" href="/index.html#bestseller">Bestseller</a></li>
+                            <li><a class="dropdown-item" href="/index.html#collections">Collections</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown" id="shop">
+                            <button onclick="goToShop()" class="btn btn-secondary dropdown-toggle"
+                                type="button" id="dropdownMenuButtonShop"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Shop
+                            </button>
+                        <ul class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButtonShop">
+                            <li><a class="dropdown-item" href="/Shop.html#shop-product">All Categories</a></li>
+                            <li><a class="dropdown-item" href="#footer">Get Disscont</a></li>
+                        </ul>
+                    </div>
+                    <div><button id="about-us" onclick="goToAboutUs()">About Us</button></a></div>
+                    <div id="menu-button" class="menu-button" onclick="changeButtonMenu(this)">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                        <div id="menu-button-dropdown">
+                            <div><a href="/index.html">Home</a></div>
+                            <hr>
+                            <div><a href="/Shop.html"></a>Shop</div>
+                            <hr>
+                            <div><a href="/AboutUs.html">About Us</a></div>
+                        </div>
+                    </ul>
+                    </div>
+
+                </div>
+                <h1><a href="index.html">Dekorare</a></h1>
+                <div id="search_log">
+                    <div class="log" >
+                        <a href="./Login.html">
+                            Login
+                        </a>
+                        <a href="">
+                            Register
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </header>
+    <div id="container-login">
+        <div class="content-login">
+            <div class="header-login">
+                <h1>Hưng đẹp trai</h1>
+            </div>
+            <div class="main-login">
+                <div class="info-login">
+                    <label for="username">Tên đăng nhập: </label>
+                    <br>
+                    <input type="text" name="tendangnhap" id="username" title="username">
+                    <br>
+                    <span id="tbTenDN" class="text-danger">*</span>
+                </div>
+                <div class="info-login">
+                    <label for="password">Mật khẩu: </label>
+                    <br>
+                    <input type="password" name="matkhau" id="password" title="password">
+                    <br>
+                    <span id="tbMK" class="text-danger">*</span>
+                </div>    
+                
+                
+            </div>
+            <div class="footer-login">
+                <button id="btn-login">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+    <script src="/js/login.js">
+    </script>
+</body>
+
+</html>
